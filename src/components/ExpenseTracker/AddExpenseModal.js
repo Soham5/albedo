@@ -40,6 +40,7 @@ const AddExpenseModal = ({ isOpen, onClose }) => {
         setFormData(prev => ({ ...prev, bankAccount: suggestedBank }));
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formData.category, formData.subcategory]);
 
   const handleChange = (field, value) => {

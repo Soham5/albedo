@@ -59,10 +59,6 @@ const BankManager = () => {
     setShowForm(false);
   };
 
-  const handleBalanceUpdate = (accountId, newBalance) => {
-    updateBankAccount(accountId, { balance: parseFloat(newBalance) });
-  };
-
   const totalBalance = bankAccounts.reduce((sum, account) => sum + account.balance, 0);
 
   return (

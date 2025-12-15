@@ -65,6 +65,7 @@ const StockTracker = () => {
       isActive = false;
       clearInterval(interval);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stocks.length]); // Intentionally minimal deps
 
   // Format time ago
@@ -214,7 +215,7 @@ const StockTracker = () => {
           </div>
         ) : (
           filteredStocks.map(stock => {
-            const { gainLoss, percentage } = calculateGainLoss(stock);
+            const { gainLoss } = calculateGainLoss(stock);
             const isPositive = gainLoss >= 0;
             const currency = stock.market === 'IND' ? '₹' : '$';
             const currentValue = stock.quantity * stock.currentPrice;

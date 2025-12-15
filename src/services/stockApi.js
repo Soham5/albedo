@@ -274,10 +274,12 @@ export const getStockPriceAlphaVantage = async (symbol) => {
 };
 */
 
-export default {
+const stockApiService = {
   getStockPrice,
   getStockQuote,
   getBatchStockQuotes,
   searchStocks,
   getUSDtoINRRate
 };
+
+export default stockApiService;

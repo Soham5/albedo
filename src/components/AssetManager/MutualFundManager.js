@@ -3,7 +3,7 @@ import { AssetContext } from '../../contexts/AssetContext';
 import './MutualFundManager.css';
 
 const MutualFundManager = () => {
-  const { mutualFunds, addMutualFund, updateMutualFund, deleteMutualFund } = useContext(AssetContext);
+  const { mutualFunds, addMutualFund, deleteMutualFund } = useContext(AssetContext);
   const [newFund, setNewFund] = useState({
     name: '',
     scheme: '',

@@ -202,7 +202,7 @@ export const initIndexedDB = async () => {
   });
 };
 
-export default {
+const storageUtils = {
   saveToStorage,
   loadFromStorage,
   removeFromStorage,
@@ -214,3 +214,5 @@ export default {
   uploadDataFromJSON,
   initIndexedDB
 };
+
+export default storageUtils;

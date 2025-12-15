@@ -3,7 +3,7 @@ import { AssetContext } from '../../contexts/AssetContext';
 import './CryptoManager.css';
 
 const CryptoManager = () => {
-  const { cryptoAssets, addCrypto, updateCrypto, deleteCrypto } = useContext(AssetContext);
+  const { cryptoAssets, addCrypto, deleteCrypto } = useContext(AssetContext);
   const [newCrypto, setNewCrypto] = useState({
     symbol: '',
     name: '',

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useCallback } from 'react';
 import { loadFromStorage, saveToStorage } from '../utils/storage';
 
 export const ExpenseContext = createContext();
@@ -10,9 +10,9 @@ export const ExpenseProvider = ({ children, userMode }) => {
   const [subcategoryBudgets, setSubcategoryBudgets] = useState({});
 
   // Determine storage key based on user mode
-  const getStorageKey = (key) => {
+  const getStorageKey = useCallback((key) => {
     return userMode === 'guest' ? `guest_${key}` : key;
-  };
+  }, [userMode]);
 
   // Load data from storage on mount
   useEffect(() => {
@@ -25,7 +25,7 @@ export const ExpenseProvider = ({ children, userMode }) => {
     setBudget(loadedBudget);
     setCategoryBudgets(loadedCategoryBudgets);
     setSubcategoryBudgets(loadedSubcategoryBudgets);
-  }, [userMode]);
+  }, [userMode, getStorageKey]);
 
   // Save expenses to storage whenever they change (skip initial mount)
   const [isExpensesLoaded, setIsExpensesLoaded] = useState(false);
@@ -35,7 +35,7 @@ export const ExpenseProvider = ({ children, userMode }) => {
       return;
     }
     saveToStorage(getStorageKey('expenses'), expenses);
-  }, [expenses, isExpensesLoaded, userMode]);
+  }, [expenses, isExpensesLoaded, userMode, getStorageKey]);
 
   // Save budget to storage whenever it changes (skip initial mount)
   const [isBudgetLoaded, setIsBudgetLoaded] = useState(false);
@@ -45,7 +45,7 @@ export const ExpenseProvider = ({ children, userMode }) => {
       return;
     }
     saveToStorage(getStorageKey('budget'), budget);
-  }, [budget, isBudgetLoaded, userMode]);
+  }, [budget, isBudgetLoaded, userMode, getStorageKey]);
 
   // Save category budgets to storage whenever they change (skip initial mount)
   const [isCategoryBudgetsLoaded, setIsCategoryBudgetsLoaded] = useState(false);
@@ -55,7 +55,7 @@ export const ExpenseProvider = ({ children, userMode }) => {
       return;
     }
     saveToStorage(getStorageKey('categoryBudgets'), categoryBudgets);
-  }, [categoryBudgets, isCategoryBudgetsLoaded, userMode]);
+  }, [categoryBudgets, isCategoryBudgetsLoaded, userMode, getStorageKey]);
 
   // Save subcategory budgets to storage whenever they change (skip initial mount)
   const [isSubcategoryBudgetsLoaded, setIsSubcategoryBudgetsLoaded] = useState(false);
@@ -65,7 +65,7 @@ export const ExpenseProvider = ({ children, userMode }) => {
       return;
     }
     saveToStorage(getStorageKey('subcategoryBudgets'), subcategoryBudgets);
-  }, [subcategoryBudgets, isSubcategoryBudgetsLoaded, userMode]);
+  }, [subcategoryBudgets, isSubcategoryBudgetsLoaded, userMode, getStorageKey]);
 
   // Cross-tab sync: Listen for storage changes from other tabs
   useEffect(() => {

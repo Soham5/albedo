@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useCallback } from 'react';
 import { loadFromStorage, saveToStorage } from '../utils/storage';
 
 export const AssetContext = createContext();
@@ -14,9 +14,9 @@ export const AssetProvider = ({ children, userMode }) => {
   const [cryptoAssets, setCryptoAssets] = useState([]);
 
   // Determine storage key based on user mode
-  const getStorageKey = (key) => {
+  const getStorageKey = useCallback((key) => {
     return userMode === 'guest' ? `guest_${key}` : key;
-  };
+  }, [userMode]);
 
   // Load data from storage on mount
   useEffect(() => {
@@ -44,7 +44,7 @@ export const AssetProvider = ({ children, userMode }) => {
     setGoals(loadFromStorage(getStorageKey('goals')) || []);
     setMutualFunds(loadFromStorage(getStorageKey('mutualFunds')) || []);
     setCryptoAssets(loadFromStorage(getStorageKey('cryptoAssets')) || []);
-  }, [userMode]);
+  }, [userMode, getStorageKey]);
 
   // Save to storage whenever data changes (skip initial mount)
   const [isStocksLoaded, setIsStocksLoaded] = useState(false);
@@ -54,7 +54,7 @@ export const AssetProvider = ({ children, userMode }) => {
       return;
     }
     saveToStorage(getStorageKey('stocks'), stocks);
-  }, [stocks, isStocksLoaded, userMode]);
+  }, [stocks, isStocksLoaded, userMode, getStorageKey]);
 
   const [isFDsLoaded, setIsFDsLoaded] = useState(false);
   useEffect(() => {
@@ -63,7 +63,7 @@ export const AssetProvider = ({ children, userMode }) => {
       return;
     }
     saveToStorage(getStorageKey('fixedDeposits'), fixedDeposits);
-  }, [fixedDeposits, isFDsLoaded, userMode]);
+  }, [fixedDeposits, isFDsLoaded, userMode, getStorageKey]);
 
   const [isRDsLoaded, setIsRDsLoaded] = useState(false);
   useEffect(() => {
@@ -72,7 +72,7 @@ export const AssetProvider = ({ children, userMode }) => {
       return;
     }
     saveToStorage(getStorageKey('recurringDeposits'), recurringDeposits);
-  }, [recurringDeposits, isRDsLoaded, userMode]);
+  }, [recurringDeposits, isRDsLoaded, userMode, getStorageKey]);
 
   const [isDebtsLoaded, setIsDebtsLoaded] = useState(false);
   useEffect(() => {
@@ -81,7 +81,7 @@ export const AssetProvider = ({ children, userMode }) => {
       return;
     }
     saveToStorage(getStorageKey('debts'), debts);
-  }, [debts, isDebtsLoaded, userMode]);
+  }, [debts, isDebtsLoaded, userMode, getStorageKey]);
 
   const [isBanksLoaded, setIsBanksLoaded] = useState(false);
   useEffect(() => {
@@ -90,7 +90,7 @@ export const AssetProvider = ({ children, userMode }) => {
       return;
     }
     saveToStorage(getStorageKey('bankAccounts'), bankAccounts);
-  }, [bankAccounts, isBanksLoaded, userMode]);
+  }, [bankAccounts, isBanksLoaded, userMode, getStorageKey]);
 
   const [isGoalsLoaded, setIsGoalsLoaded] = useState(false);
   useEffect(() => {
@@ -99,7 +99,7 @@ export const AssetProvider = ({ children, userMode }) => {
       return;
     }
     saveToStorage(getStorageKey('goals'), goals);
-  }, [goals, isGoalsLoaded, userMode]);
+  }, [goals, isGoalsLoaded, userMode, getStorageKey]);
 
   const [isMFsLoaded, setIsMFsLoaded] = useState(false);
   useEffect(() => {
@@ -108,7 +108,7 @@ export const AssetProvider = ({ children, userMode }) => {
       return;
     }
     saveToStorage(getStorageKey('mutualFunds'), mutualFunds);
-  }, [mutualFunds, isMFsLoaded, userMode]);
+  }, [mutualFunds, isMFsLoaded, userMode, getStorageKey]);
 
   const [isCryptoLoaded, setIsCryptoLoaded] = useState(false);
   useEffect(() => {
@@ -117,7 +117,7 @@ export const AssetProvider = ({ children, userMode }) => {
       return;
     }
     saveToStorage(getStorageKey('cryptoAssets'), cryptoAssets);
-  }, [cryptoAssets, isCryptoLoaded, userMode]);
+  }, [cryptoAssets, isCryptoLoaded, userMode, getStorageKey]);
 
   // Cross-tab sync: Listen for storage changes from other tabs
   useEffect(() => {
