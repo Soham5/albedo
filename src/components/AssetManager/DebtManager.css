@@ -1,0 +1,250 @@
+.debt-manager {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.debt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.debt-header h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+}
+
+.total-debt {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.add-debt-button {
+  padding: 0.5rem 1rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-debt-button:hover {
+  background-color: #c0392b;
+}
+
+.debt-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.debt-form input,
+.debt-form textarea {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.debt-form input:focus,
+.debt-form textarea:focus {
+  outline: none;
+  border-color: #e74c3c;
+}
+
+.debt-form textarea {
+  grid-column: 1 / -1;
+  resize: vertical;
+}
+
+.submit-button {
+  grid-column: 1 / -1;
+  padding: 0.75rem;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #27ae60;
+}
+
+.debt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.debt-item {
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #e74c3c;
+  position: relative;
+}
+
+.debt-item.overdue {
+  background-color: #ffe6e6;
+  border-left-color: #c0392b;
+}
+
+.debt-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.debt-main h4 {
+  margin: 0;
+  color: #2c3e50;
+  flex: 1;
+}
+
+.overdue-badge {
+  background-color: #e74c3c;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.debt-rate {
+  background-color: #e74c3c;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.debt-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.debt-amount {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.debt-amount .label {
+  font-size: 0.875rem;
+  color: #7f8c8d;
+}
+
+.debt-amount .value {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.debt-amount .value.warning {
+  color: #e74c3c;
+}
+
+.debt-progress {
+  margin-bottom: 1rem;
+}
+
+.progress-label {
+  font-size: 0.875rem;
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2ecc71, #27ae60);
+  transition: width 0.3s ease;
+}
+
+.debt-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.debt-actions input {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.debt-actions input:focus {
+  outline: none;
+  border-color: #2ecc71;
+}
+
+.debt-actions .hint {
+  font-size: 0.75rem;
+  color: #95a5a6;
+  font-style: italic;
+}
+
+.debt-notes {
+  font-size: 0.875rem;
+  color: #95a5a6;
+  font-style: italic;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.delete-debt {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.delete-debt:hover {
+  opacity: 1;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+  .debt-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .debt-details {
+    grid-template-columns: 1fr;
+  }
+}

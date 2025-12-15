@@ -1,0 +1,48 @@
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-label {
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.input-label .required {
+  color: #e74c3c;
+}
+
+.input-control {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.input-control:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.input-control:hover {
+  border-color: #bdc3c7;
+}
+
+.input-control::placeholder {
+  color: #95a5a6;
+}
+
+/* Number input styling */
+.input-control[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.input-control[type="number"]::-webkit-outer-spin-button,
+.input-control[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

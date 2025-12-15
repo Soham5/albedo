@@ -1,4 +1,41 @@
-# Getting Started with Create React App
+# Albedo - Personal Finance Management App
+
+A comprehensive React-based personal finance management application for tracking expenses, managing assets, and achieving financial goals.
+
+## 🌟 Features
+
+### Expense Tracker
+- **Budget Planning**: Set monthly budgets and track spending
+- **Monthly Tracking**: Monitor expenses month by month
+- **Category Management**: Organize expenses by categories
+- **Visual Analytics**: Charts and graphs for spending patterns
+- **Transaction History**: Complete record of all expenses
+
+### Asset Management
+- **Stock Portfolio**: Track stocks with live price updates (ready for API integration)
+- **Fixed Deposits (FD)**: Manage FDs with maturity calculations
+- **Recurring Deposits (RD)**: Track RDs with progress monitoring
+- **Debt Management**: Monitor debts and track repayments
+- **Bank Accounts**: Centralize all bank account information
+- **Goal Tracking**: Set and monitor financial goals with progress bars
+
+### Dashboard
+- Quick overview of financial status
+- Current balance display
+- Expense and asset summaries
+- Quick action buttons
+
+## 📁 Project Structure
+
+```
+src/
+├── components/        # Reusable UI components
+├── contexts/          # React Context for state management
+├── pages/             # Page-level components
+├── services/          # API services
+├── utils/             # Utility functions
+└── App.js            # Main application
+```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -1,0 +1,250 @@
+.crypto-manager {
+  padding: 1.5rem;
+}
+
+.crypto-header {
+  margin-bottom: 2rem;
+}
+
+.crypto-summary h3 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.crypto-totals {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 12px;
+  color: white;
+}
+
+.crypto-totals .total-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.crypto-totals .label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.crypto-totals .value {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.crypto-totals .value.positive {
+  color: #4ade80;
+}
+
+.crypto-totals .value.negative {
+  color: #ffe4e1;
+}
+
+.add-crypto-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.add-crypto-form input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.add-crypto-form button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.add-crypto-form button:hover {
+  transform: translateY(-2px);
+}
+
+.crypto-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.crypto-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr auto auto;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  align-items: center;
+  transition: box-shadow 0.3s;
+}
+
+.crypto-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.crypto-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.crypto-symbol {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #f5576c;
+  font-family: 'Courier New', monospace;
+}
+
+.crypto-name {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.crypto-quantity {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-top: 0.25rem;
+}
+
+.crypto-prices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.price-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.price-detail .label {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.price-detail .value {
+  font-weight: 600;
+  color: #333;
+}
+
+.price-detail .value.highlight {
+  color: #f5576c;
+  font-size: 1.05rem;
+}
+
+.crypto-returns {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  min-width: 120px;
+}
+
+.crypto-returns.positive {
+  background: #d1fae5;
+}
+
+.crypto-returns.negative {
+  background: #fee2e2;
+}
+
+.returns-amount {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.crypto-returns.positive .returns-amount {
+  color: #059669;
+}
+
+.crypto-returns.negative .returns-amount {
+  color: #dc2626;
+}
+
+.returns-percentage {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.crypto-returns.positive .returns-percentage {
+  color: #047857;
+}
+
+.crypto-returns.negative .returns-percentage {
+  color: #b91c1c;
+}
+
+.delete-crypto {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.delete-crypto:hover {
+  opacity: 1;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #9ca3af;
+  font-size: 1.05rem;
+}
+
+.crypto-note {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #991b1b;
+}
+
+@media (max-width: 768px) {
+  .add-crypto-form {
+    grid-template-columns: 1fr;
+  }
+
+  .crypto-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .crypto-prices {
+    grid-template-columns: 1fr;
+  }
+
+  .crypto-returns {
+    align-items: flex-start;
+  }
+
+  .crypto-totals {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

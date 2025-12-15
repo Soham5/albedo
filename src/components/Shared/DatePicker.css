@@ -1,0 +1,34 @@
+.date-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.date-picker-label {
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.date-picker-label .required {
+  color: #e74c3c;
+}
+
+.date-picker-input {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s;
+  background-color: white;
+}
+
+.date-picker-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.date-picker-input:hover {
+  border-color: #bdc3c7;
+}

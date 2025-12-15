@@ -1,0 +1,89 @@
+.monthly-tracker {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.month-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.month-selector h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.month-nav-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #3498db;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+}
+
+.month-nav-button:hover {
+  background-color: #ecf0f1;
+}
+
+.spending-progress {
+  margin-top: 1rem;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.progress-info .warning {
+  color: #e74c3c;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background-color: #ecf0f1;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.progress-fill.warning {
+  background: linear-gradient(90deg, #e67e22, #e74c3c);
+}
+
+@media (max-width: 768px) {
+  .monthly-tracker {
+    padding: 1rem;
+  }
+  
+  .month-selector h3 {
+    font-size: 1.25rem;
+  }
+  
+  .month-nav-button {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+  }
+  
+  .progress-info {
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+  }
+}

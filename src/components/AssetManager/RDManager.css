@@ -1,0 +1,204 @@
+.rd-manager {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.rd-header h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.add-rd-button {
+  padding: 0.5rem 1rem;
+  background-color: #9b59b6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-rd-button:hover {
+  background-color: #8e44ad;
+}
+
+.rd-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.rd-form input,
+.rd-form textarea {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.rd-form input:focus,
+.rd-form textarea:focus {
+  outline: none;
+  border-color: #9b59b6;
+}
+
+.rd-form textarea {
+  grid-column: 1 / -1;
+  resize: vertical;
+}
+
+.submit-button {
+  grid-column: 1 / -1;
+  padding: 0.75rem;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #27ae60;
+}
+
+.rd-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rd-item {
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #9b59b6;
+  position: relative;
+}
+
+.rd-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.rd-main h4 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.rd-rate {
+  background-color: #9b59b6;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.rd-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.rd-amount {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.rd-amount .label {
+  font-size: 0.875rem;
+  color: #7f8c8d;
+}
+
+.rd-amount .value {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.rd-amount .value.highlight {
+  color: #9b59b6;
+}
+
+.rd-progress {
+  margin-bottom: 0.75rem;
+}
+
+.progress-label {
+  font-size: 0.875rem;
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #9b59b6, #8e44ad);
+  transition: width 0.3s ease;
+}
+
+.rd-notes {
+  font-size: 0.875rem;
+  color: #95a5a6;
+  font-style: italic;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.delete-rd {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.delete-rd:hover {
+  opacity: 1;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+  .rd-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .rd-details {
+    grid-template-columns: 1fr;
+  }
+}
