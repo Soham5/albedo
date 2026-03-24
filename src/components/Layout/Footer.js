@@ -25,14 +25,21 @@ const Footer = () => {
           <span className="icon">💰</span>
           <span className="label">Expenses</span>
         </button>
-        <button 
+        <button
           className={`footer-nav-item ${isActive('/assets') ? 'active' : ''}`}
           onClick={() => navigate('/assets')}
         >
           <span className="icon">📊</span>
           <span className="label">Assets</span>
         </button>
-        <button 
+        <button
+          className={`footer-nav-item ${isActive('/ai-advisor') ? 'active' : ''}`}
+          onClick={() => navigate('/ai-advisor')}
+        >
+          <span className="icon">🤖</span>
+          <span className="label">AI</span>
+        </button>
+        <button
           className={`footer-nav-item ${isActive('/settings') ? 'active' : ''}`}
           onClick={() => navigate('/settings')}
         >

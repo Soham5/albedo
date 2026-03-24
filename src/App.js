@@ -10,6 +10,7 @@ import Dashboard from './pages/Dashboard';
 import ExpensePage from './pages/ExpensePage';
 import AssetsPage from './pages/AssetsPage';
 import SettingsPage from './pages/SettingsPage';
+import AIAdvisorPage from './pages/AIAdvisorPage';
 import './App.css';
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
                 <Route path="/expenses" element={<ExpensePage />} />
                 <Route path="/assets" element={<AssetsPage />} />
                 <Route path="/settings" element={<SettingsPage userMode={userMode} onLogout={handleLogout} />} />
+                <Route path="/ai-advisor" element={<AIAdvisorPage />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </main>

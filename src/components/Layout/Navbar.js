@@ -13,6 +13,7 @@ const Navbar = ({ userMode, onLogout }) => {
             <li><a href="/">Home</a></li>
             <li><a href="/expenses">Expenses</a></li>
             <li><a href="/assets">Assets</a></li>
+            <li><a href="/ai-advisor">AI Advisor</a></li>
             <li><a href="/settings">Settings</a></li>
             <li>
               <button className="logout-button" onClick={onLogout}>
